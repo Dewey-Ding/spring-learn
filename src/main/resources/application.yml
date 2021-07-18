@@ -1,0 +1,48 @@
+
+server:
+  port: 8080
+spring:
+  application:
+    name: aop-learn
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: admin
+#    password: admin
+  redis:
+    host: localhost
+    port: 6379
+  kafka:
+    bootstrap-servers: 10.177.47.5:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: testDelay
+      enable-auto-commit:
+xxl:
+  job:
+    accessToken:
+    executor:
+      appname: aop-learn
+      ip:
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: 30
+      port: 6379
+      address:
+    admin:
+      addresses: http://localhost:8084/xxl-job-admin
+
+
+
+kafka:
+  delay:
+    bootstrap-servers: 10.177.47.5:9092
+    consumer:
+      groupId: testDelay
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+#management:
+#  endpoint:
+#    health:
+#      show-details: always

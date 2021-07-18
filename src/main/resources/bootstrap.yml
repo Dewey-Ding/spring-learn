@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: aop_learn
+#  cloud:
+#    config:
+#      profile: online
+#      label: master
+#      uri: http://localhost:8001
